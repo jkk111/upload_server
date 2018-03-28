@@ -15,7 +15,7 @@ try {
 let upload = multer({ dest: STATIC_PATH });
 app.use(express.static(STATIC_PATH));
 
-app.post('/', multer.single('file'), () => {
+app.post('/', upload.single('file'), () => {
   res.send('OK');
 })
 
